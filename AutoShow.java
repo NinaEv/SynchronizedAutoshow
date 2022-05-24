@@ -12,9 +12,9 @@ public class AutoShow {
         for (int i = 0; i < CARS; i++) {
             try {
                 Thread.sleep(RECIEVE_TIME);
-                cars.add(new Car());
                 System.out.println(Thread.currentThread().getName() + " Toyota" + " выпустил 1 авто");
                 synchronized (this) {
+                    cars.add(new Car());
                     notify();
                 }
             } catch (InterruptedException e) {
